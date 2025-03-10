@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: hedgemony
+networks:
+- id: 42161
+  start_block: 0
+  contracts:
+  - name: GnosisSafeProxy
+    address:
+    - 0x4129377F2d4504F56a2373AEe80A6612F9DD855c
+    handler: src/EventHandlers.ts
+    events:
+    - event: AddedOwner(address owner)
+    - event: ApproveHash(bytes32 indexed approvedHash, address indexed owner)
+    - event: ChangedFallbackHandler(address handler)
+    - event: ChangedGuard(address guard)
+    - event: ChangedThreshold(uint256 threshold)
+    - event: ExecutionFailure(bytes32 txHash, uint256 payment)
+    - event: ExecutionSuccess(bytes32 txHash, uint256 payment)
+    - event: RemovedOwner(address owner)
+    - event: SafeMultiSigTransaction(address to, uint256 value, bytes data, uint8 operation, uint256 safeTxGas, uint256 baseGas, uint256 gasPrice, address gasToken, address refundReceiver, bytes signatures, bytes additionalInfo)
+    - event: SafeReceived(address indexed sender, uint256 value)
+    - event: SafeSetup(address indexed initiator, address[] owners, uint256 threshold, address initializer, address fallbackHandler)
+    - event: SignMsg(bytes32 indexed msgHash)
+    - event: DisabledModule(address module)
+    - event: EnabledModule(address module)
+    - event: ExecutionFromModuleFailure(address indexed module)
+    - event: ExecutionFromModuleSuccess(address indexed module)
+    - event: SafeModuleTransaction(address module, address to, uint256 value, bytes data, uint8 operation)

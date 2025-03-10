@@ -1,0 +1,78 @@
+type GnosisSafeProxy_AddedOwner {
+  id: ID!
+  owner: String!
+}
+
+type GnosisSafeProxy_ApproveHash {
+  id: ID!
+  approvedHash: String!
+  owner: String!
+}
+
+type GnosisSafeProxy_ChangedFallbackHandler {
+  id: ID!
+  handler: String!
+}
+
+type GnosisSafeProxy_ChangedGuard {
+  id: ID!
+  guard: String!
+}
+
+type GnosisSafeProxy_ChangedThreshold {
+  id: ID!
+  threshold: BigInt!
+}
+
+type GnosisSafeProxy_ExecutionFailure {
+  id: ID!
+  txHash: String!
+  payment: BigInt!
+}
+
+type GnosisSafeProxy_ExecutionSuccess {
+  id: ID!
+  txHash: String!
+  payment: BigInt!
+}
+
+type GnosisSafeProxy_RemovedOwner {
+  id: ID!
+  owner: String!
+}
+
+type GnosisSafeProxy_SafeMultiSigTransaction {
+  id: ID!
+  to: String!
+  value: BigInt!
+  data: String!
+  operation: BigInt!
+  safeTxGas: BigInt!
+  baseGas: BigInt!
+  gasPrice: BigInt!
+  gasToken: String!
+  refundReceiver: String!
+  signatures: String!
+  additionalInfo: String!
+}
+
+type GnosisSafeProxy_SafeReceived {
+  id: ID!
+  sender: String!
+  value: BigInt!
+}
+
+type GnosisSafeProxy_SafeSetup {
+  id: ID!
+  initiator: String!
+  owners: [String!]!
+  threshold: BigInt!
+  initializer: String!
+  fallbackHandler: String!
+}
+
+type GnosisSafeProxy_SignMsg {
+  id: ID!
+  msgHash: String!
+}
+
